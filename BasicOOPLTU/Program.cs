@@ -5,6 +5,18 @@ namespace BasicOOPLTU
     {
         static void Main(string[] args)
         {
+
+            //List<string> list = new List<string>();
+            //list.
+
+            string name = "Kalle";
+            string res = name.AddString("Anka");
+            Console.WriteLine(res);
+
+            string test = "Test";
+            string res2 = test.AddString("Test 2");
+            Console.WriteLine(res2);
+
             //FirstPart();
             Vehicle v = new Vehicle("Volvo");
                         
