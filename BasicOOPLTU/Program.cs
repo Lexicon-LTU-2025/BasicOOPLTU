@@ -7,7 +7,9 @@ namespace BasicOOPLTU
         {
             //FirstPart();
             Vehicle v = new Vehicle("Volvo");
+            Console.WriteLine(v.Turn());
             Car c = new Car("BMW", "R39");
+            Console.WriteLine(c.Turn());
             Saab s = new Saab();
 
             //Console.WriteLine(v.Drive(50));
@@ -43,7 +45,6 @@ namespace BasicOOPLTU
                 //    Saab saab = (Saab)vehicle;
                 //    Console.WriteLine(saab.SpecialMethod());
                 //}
-
                 if(vehicle is Saab castedToSaab)
                 {
                     Console.WriteLine(castedToSaab.SpecialMethod());

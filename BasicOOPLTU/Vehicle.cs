@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace BasicOOPLTU
 {
-    internal class Vehicle : IDrivable
+    internal abstract class AbstractVehicle : IDrivable
+    {
+        private int fuel; 
+        public abstract string Turn();
+        public virtual string Drive(int distance)
+        {
+            //return $"Vehicle drove for {distance}"; 
+            return $"{GetType().Name} drove for {distance}"; 
+        }
+    }
+
+    internal class Vehicle : AbstractVehicle
     {
         public string Brand { get; set; }
 
@@ -15,10 +26,9 @@ namespace BasicOOPLTU
             Brand = brand;
         }
 
-        public virtual string Drive(int distance)
+        public override string Turn()
         {
-            //return $"Vehicle drove for {distance}"; 
-            return $"{GetType().Name} drove for {distance}"; 
+            return "Turning"; 
         }
     }
     internal class Car : Vehicle, IStoppable, IDrivable
