@@ -15,7 +15,7 @@ namespace BasicOOPLTU
             Brand = brand;
         }
 
-        public string Drive(int distance)
+        public virtual string Drive(int distance)
         {
             //return $"Vehicle drove for {distance}"; 
             return $"{GetType().Name} drove for {distance}"; 
@@ -27,6 +27,11 @@ namespace BasicOOPLTU
         public Car(string brand, string model) : base(brand)
         {
             Model = model; 
+        }
+
+        public override string Drive(int distance)
+        {
+            return $"{base.Drive(distance)} from car";
         }
 
         public void Stop()
