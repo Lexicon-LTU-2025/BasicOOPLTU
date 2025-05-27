@@ -5,6 +5,11 @@ namespace BasicOOPLTU
     {
         static void Main(string[] args)
         {
+            //FirstPart();
+        }
+
+        private static void FirstPart()
+        {
             Person p = new Person();
             p.Name = "Kalle";
             Employee e = new Employee();
