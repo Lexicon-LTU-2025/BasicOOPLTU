@@ -7,6 +7,9 @@ namespace BasicOOPLTU
         {
             //FirstPart();
             Vehicle v = new Vehicle("Volvo");
+                        
+            //v.Brand = "Test"; 
+            //v.ProtectedBool = false;
             Console.WriteLine(v.Turn());
             Car c = new Car("BMW", "R39");
             Console.WriteLine(c.Turn());

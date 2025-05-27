@@ -8,7 +8,9 @@ namespace BasicOOPLTU
 {
     internal abstract class AbstractVehicle : IDrivable
     {
-        private int fuel; 
+        private int fuel;
+
+        protected bool ProtectedBool; 
         public abstract string Turn();
         public virtual string Drive(int distance)
         {
@@ -19,7 +21,7 @@ namespace BasicOOPLTU
 
     internal class Vehicle : AbstractVehicle
     {
-        public string Brand { get; set; }
+        public string Brand { get; protected set; }
 
         public Vehicle(string brand)
         {
@@ -28,10 +30,11 @@ namespace BasicOOPLTU
 
         public override string Turn()
         {
+            ProtectedBool = false;
             return "Turning"; 
         }
     }
-    internal class Car : Vehicle, IStoppable, IDrivable
+    internal /*sealed*/ class Car : Vehicle, IStoppable, IDrivable
     {
         public string Model { get; set; }
         public Car(string brand, string model) : base(brand)
@@ -46,6 +49,7 @@ namespace BasicOOPLTU
 
         public void Stop()
         {
+            ProtectedBool = false; 
             Console.WriteLine("Car stopped.");
         }
     }
