@@ -6,6 +6,12 @@ namespace BasicOOPLTU
         static void Main(string[] args)
         {
             //FirstPart();
+            Vehicle v = new Vehicle("Volvo");
+            Car c = new Car("BMW", "R39");
+
+            Console.WriteLine(v.Drive(50));
+            Console.WriteLine(c.Drive(55));
+            c.Stop(); 
         }
 
         private static void FirstPart()
