@@ -39,4 +39,17 @@ namespace BasicOOPLTU
             Console.WriteLine("Car stopped.");
         }
     }
+
+    internal class Saab : Car
+    {
+        public Saab(string model = "900"): base("Saab", model)
+        {
+
+        }
+
+        public string SpecialMethod()
+        {
+            return "From Saab"; 
+        }
+    }
 }

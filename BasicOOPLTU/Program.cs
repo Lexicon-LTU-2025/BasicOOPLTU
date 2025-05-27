@@ -8,10 +8,47 @@ namespace BasicOOPLTU
             //FirstPart();
             Vehicle v = new Vehicle("Volvo");
             Car c = new Car("BMW", "R39");
+            Saab s = new Saab();
 
-            Console.WriteLine(v.Drive(50));
-            Console.WriteLine(c.Drive(55));
-            c.Stop(); 
+            //Console.WriteLine(v.Drive(50));
+            //Console.WriteLine(c.Drive(55));
+            //c.Stop();
+            //
+
+            List<IDrivable> vehicles = new List<IDrivable>
+            {
+                v,
+                s,
+                c
+            };
+
+            foreach(IDrivable vehicle in vehicles)
+            {
+                Console.WriteLine(vehicle.Drive(50));
+
+                //unsafe cast
+                //Saab saab = (Saab)vehicle;
+
+                //Saab saab = vehicle as Saab; 
+                //Console.WriteLine(saab.SpecialMethod());
+                
+                //Saab saab = vehicle as Saab; 
+                //if(saab != null)
+                //{
+                //    Console.WriteLine(saab.SpecialMethod());
+                //}
+
+                //if(vehicle is Saab)
+                //{
+                //    Saab saab = (Saab)vehicle;
+                //    Console.WriteLine(saab.SpecialMethod());
+                //}
+
+                if(vehicle is Saab castedToSaab)
+                {
+                    Console.WriteLine(castedToSaab.SpecialMethod());
+                }
+            }
         }
 
         private static void FirstPart()
